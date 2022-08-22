@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+
+
+
+.business {}
+.business .business-box {}
+.business-field { 
+  display: flex; justify-content: space-between;
+}
+.business-field .business-field-wrap {
+  max-width: 420px; width: 32%;
+}
+.business-field .business-field-wrap .business-field-img { margin-bottom: 36px;}
+.business-field .business-field-wrap .business-field-img img { width: 100%;}
+.business-field .business-field-wrap .business-field-txt-box { min-height: 225px; padding: 0 8px; margin-bottom: 59px;}
+.business-field .business-field-wrap .business-field-txt-box .business-field-tit { display: block;
+  margin-bottom: 16px;
+  font-weight: 700; font-size: 30px; line-height: 48px; color: #333;
+}
+.business-field .business-field-wrap .business-field-txt-box .business-field-txt { font-weight: 400; font-size: 18px; color: #373737; line-height: 27px;}
+.business-field .business-field-wrap .business-field-list { width: 100%; padding: 0 10px;}
+.business-field .business-field-wrap .business-field-list li::after { content: ""; display: block;
+  width: 100%; height: 1px; margin: 10px 0;
+  background-color: #f2f2f2;
+}
+.business-field .business-field-wrap .business-field-list li:last-child:after { display: none;}
+.more { display: block;
+  height: 30px; 
+  font-size: 18px; line-height: 30px;
+  position: relative; 
+}
+.more span { position: absolute; left: 38px; top: 0; z-index: 10;}
+.more::before { content: "\f061"; 
+  width: 30px; height: 30px; margin-right: 8px; 
+  color: #fff;
+  background-color: #7ab5c7;
+  border-radius: 50%;
+  font-family:'FontAwesome'; text-align: center;
+  position: absolute; left: 0; top: 0; z-index: 10;
+}
+.more::after { content: "";
+  width: 30px; height: 30px;
+  background-color: #7ab5c7;
+  border-radius: 15px;
+  position: absolute; left: 0; top: 0;
+  transition: all 0.3s;
+}
+.more:hover span { color: #fff;}
+.more:hover::after { width: 100%;}
+
+
+
+
+
+@media all and (max-width: 1063px) {
+  .more span { font-size: 14px;}
+}
+@media all and (max-width: 876px) {
+  .more span { font-size: 12px;}
+}
+@media all and (max-width: 800px) {
+  .business-field { flex-direction: column;}
+  .business-field .business-field-wrap { width: 100%; max-width: 100%;}
+  .business-field .business-field-wrap + .business-field-wrap { margin-top: 100px;}
+  .business-field .business-field-wrap .business-field-txt-box { margin-bottom: 35px; min-height: 0;}
+  .more span { font-size: 16px;}
+}
