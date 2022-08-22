@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+article .art-tit { opacity: 1;}
+article .art-desc { 
+  margin: 0;
+  font-weight: 400; font-size: 20px; 
+}
+article .art-desc::before { content: "\f105";
+  margin-right: 10px;
+  font-family:'FontAwesome';
+}
+article .art-desc:first-of-type { margin-top: 40px;}
+
+/* PRINTER-BOX-S */
+.printer-box { 
+  display: flex; justify-content: space-between;
+  margin-bottom: 150px;
+}
+/* BOX-IMG-S */
+.box-img { display: none;}
+/* BOX-IMG-E */
+
+/* PRINTER-BOX-E */
+
+/* PRINTER-CONT-S */
+.printer-cont { position: relative;}
+/* PRINTER-PRODUCT-S */
+.printer-prouduct { height: 850px; background-color: #f4f5f5;}
+/* TAP-S */
+.tab { 
+  width: 100%;
+  position: absolute; left: 0; top: -30px;
+}
+.tab .tab-box { 
+  display: flex; justify-content: center;
+  max-width: 882px; height: 60px; margin: 0 auto;
+  background-color: #fff;
+}
+.tab .tab-box li {
+  flex: 1;
+  height: 60px;
+  border: 1px solid #eee;
+  font-weight: 500; font-size: 20px; text-align: center; line-height: 60px;
+  cursor: pointer;
+}
+.tab .tab-box li.active {
+  color: #fff;
+  background-color: #7ab5c7;
+  border-color: #7ab5c7;
+}
+
+/* TAP-E */
+
+/* TAP-CONT-S */
+.tab-cont { padding: 115px 122px;}
+.tab-cont .tab-content { display: none;}
+.tab-cont .tab-content.active{ display: block;}
+/* CHARACTER-S */
+/* .character { display: block;} */
+.tab-content dl { margin-bottom: 80px;}
+.tab-content dl:last-of-type { margin-bottom: 0;}
+.tab-content dl dt { 
+  margin-bottom: 8px;
+  font-weight: 700; font-size: 26px; line-height: 60px;
+}
+.tab-content dl dd { 
+  font-size: 18px; line-height: 25px;
+}
+.tab-content dl dd::before { content: ""; display: inline-block;
+  width: 3px; height: 3px; margin-right: 6px; 
+  background-color: #373737;
+  transform: translateY(-5px);
+}
+
+/* CHARACTER-E */
+
+/* SPECIFICATIONS-S */
+/* .specifications { display: none;} */
+.specifications h3 { opacity: 1;
+  margin-bottom: 20px;
+  font-size: 26px; line-height: 60px;
+}
+.specifications em { font-size: 18px;}
+table { 
+  width: 100%;
+  border-top: 2px solid #373737;
+  border-bottom: 1px solid #373737;
+}
+table tbody tr td { 
+  padding: 15px 0 15px 20px;
+  font-size: 18px;
+  border-top: 1px solid #373737;
+}
+table tbody tr td:first-of-type { 
+  width: 250px;
+  font-weight: 700;
+  border-right: 1px solid #373737;
+  background-color: #fff;
+}
+/* SPECIFICAIONS-PRINTER-S */
+.specifications-printer { margin-bottom: 60px;}
+/* SPECIFICAIONS-PRINTER-E */
+
+/* SPECIFICAIONS-FIREARMS-S */
+.specifications-firearms { margin-bottom: 95px;}
+/* SPECIFICAIONS-FIREARMS-E */
+
+/* SPECIFICATIONS-E */
+/* TAP-CONT-E */
+/* PRINTER-PRODUCT-E */
+/* PRINTER-CONT-E */
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1170px) {
+  
+}
+@media all and (max-width: 890px) {
+  
+}

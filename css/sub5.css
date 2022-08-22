@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.box-tit { margin-bottom: 0;}
+article { margin-bottom: 150px;}
+article .art-desc { margin: 0;}
+article .art-desc:first-of-type { margin-top: 40px;}
+
+
+/* CI-BOX-S */
+.ci-box .ci-box-img img { width: 100%; margin-top: 60px;}
+/* CI-BOX-E */
+
+/* COLOR-BOX-S */
+.color-box .color-field { margin-top: 64px;}
+.color-box .color-field .color-field-list { display: flex; justify-content: space-between; flex-wrap: wrap;}
+/* COLOR-BOX-E */
+
+/* SLOGAN-BOX-S */
+.slogan-box .slogan-box-img img { width: 100%; margin-top: 64px;}
+/* SLOGAN-BOX-E */
+
+/* LOGO-SLOGAN-BOX-S */
+.logo-slogan-box .logo-slogan-img img { width: 100%; margin-top: 40px;}
+/* LOGO-SLOGAN-BOX-E */
+
+
+@media all and (max-width: 1280px) {
+  section { padding: 158px 10px 160px;}
+}
+
+@media all and (max-width: 1170px) {
+  .color-box .color-field .color-field-list { margin: 0 auto;}
+  
+}
+@media all and (max-width: 890px) {
+  .color-box .color-field .color-field-list { justify-content: center;}
+  .color-box .color-field .color-field-list li { margin: 0 30px 30px 0;} 
+  
+}

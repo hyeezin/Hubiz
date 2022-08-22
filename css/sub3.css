@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+.visual .visual-box-txt { color: #fff;}
+article .art-desc { margin: 0;}
+article .art-desc:first-of-type { margin-top: 40px;}
+
+
+/* QUALITY-BOX-S */
+.quality { position: relative;}
+.quality-box { margin-bottom: 147px;}
+.quality-field {  
+  display: flex; flex-wrap: wrap;
+  margin: 0 auto; 
+  border: 1px solid #e4e4e4; border-radius: 25px;
+}
+.quality-field ul + ul { border-left: 1px solid #e4e4e4;}
+.quality-field-box {
+  display: flex; flex-direction: column; justify-content: center; align-items: center; 
+  width: 33.3%;
+  position: relative;
+}
+.quality-field-box > li:nth-child(2) { display: none;
+  width: 100%; 
+}
+.quality-field-box > li:nth-child(2) figure img { height: 400px;}
+.quality-field-box li figure { opacity: 0;
+  width: 100%; height: 100%;
+  transition: all 0.8s;
+}
+.quality-field-box li figure img { width: 100%;}
+.quality-field-box .quality-field-list { 
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  width: 100%;
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.quality-field-box .quality-field-list > strong { font-weight: 600; font-size: 36px; color: #373737; text-align: center; line-height: 28px;}
+.quality-field-box .quality-field-list > strong::before { content: ""; display: none;
+  width: 72px; height: 65px;
+  background: url(../img/sub/sub_iconn.png) no-repeat;
+  transition: all 0.8s;
+}
+.quality-field .quality-field-box:nth-of-type(1) .quality-field-list > strong::before { background-position: -72px -320px;}
+.quality-field .quality-field-box:nth-of-type(2) .quality-field-list > strong::before { background-position: -216px -320px;}
+.quality-field .quality-field-box:nth-of-type(3) .quality-field-list > strong::before { background-position: -72px -385px;}
+.quality-field-box .quality-field-list > strong::after { content: ""; display: block;
+  width: 72px; height: 65px; margin: 33px 0 22px ;
+  background: url(../img/sub/sub_iconn.png) no-repeat;
+}
+.quality-field .quality-field-box:nth-of-type(1) .quality-field-list > strong::after { background-position: 0 -320px;}
+.quality-field .quality-field-box:nth-of-type(2) .quality-field-list > strong::after { background-position: -144px -320px;}
+.quality-field .quality-field-box:nth-of-type(3) .quality-field-list > strong::after { background-position: 0 -385px;}
+.quality-field-box .quality-field-list .quality-field-txt { text-align: center;}
+.quality-field-box .quality-field-list .quality-field-txt li {}
+.quality-field-box .quality-field-list .quality-field-txt li strong { display: block;
+  margin-bottom: 24px;
+  font-weight: 500; font-size: 25px; line-height: 34px;
+}
+.quality-field-box .quality-field-list .quality-field-txt .quality-field-list-h { opacity: 0;
+  font-size: 18px; line-height: 30px; color: #fff;
+}
+
+
+.quality-field-box:hover > li figure { opacity: 1;}
+.quality-field-box:hover .quality-field-list .quality-field-txt .quality-field-list-h { opacity: 1;}
+.quality-field-box:hover .quality-field-list > strong { font-size: 0;}
+.quality-field-box:hover .quality-field-list > strong::before { display: block;}
+.quality-field-box:hover .quality-field-list > strong::after { display: none;}
+.quality-field-box:hover .quality-field-list .quality-field-txt li strong { color: #fff;}
+/* QUALITY-BOX-E */
+
+/* INSPECTION-BOX-S */
+.inspection-box {}
+.inspection-field {}
+.inspection-field .inspection-field-box:nth-of-type(n+1):nth-of-type(-n+2) { margin-bottom: 100px;}
+.inspection-field .inspection-field-box h4 { 
+  margin-bottom: 41px;
+  font-weight: 600; font-size: 30px; line-height: 40px;
+}
+.inspection-field .inspection-field-box .inspection-field-list { display: flex; flex-wrap: wrap;}
+.inspection-field .inspection-field-box .inspection-field-list li { margin-bottom: 20px;}
+.inspection-field .inspection-field-box .inspection-field-list li figure img { width: 230px;}
+.inspection-field .inspection-field-box .inspection-field-list li + li { margin-left: 15px;}
+.inspection-field .inspection-field-box:nth-of-type(2) .inspection-field-list li:last-child {margin-left: 0;}
+/* INSPECTION-BOX-E */
+
+
+@media all and (max-width: 1245px) {
+  .inspection-field .inspection-field-box .inspection-field-list li { margin-left: 15px;}
+  .inspection-field .inspection-field-box:nth-of-type(2) .inspection-field-list li:last-child { margin-left: 15px;}
+}
+
+@media all and (max-width: 1050px) {
+  .quality-field { flex-direction: column;}
+  .quality-field-box { width: 100%; height: 400px;}
+  .quality-field-box > li:nth-child(1) { display: none;}
+  .quality-field-box > li:nth-child(2) { display: block;
+    width: 100%; height: 400px;
+  }
+}

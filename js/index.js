@@ -27,11 +27,23 @@ $(function(){
   let num = 1;
   $('.all-menu-btn').on('click' , function(){
     if( num == 1) {
-      $('.all-menu-box').show()
+      $('.all-menu').show()
       num = 2;
     } else if( num == 2) {
-      $('.all-menu-box').hide()
+      $('.all-menu').hide()
       num = 1;
     }
   })
 })
+
+
+
+$(function(){
+  $('.vodvar .tab-link').click(function(){
+    let activeTab = $(this).attr('data-tab');
+    $('.vodvar .tab-link').removeClass('active');
+    $('.product-video').removeClass('active');
+    $(this).addClass('active');
+    $('#' + activeTab).addClass('active');
+  })
+});

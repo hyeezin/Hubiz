@@ -1,24 +1,26 @@
 @charset "UTF-8";
 
 /* COMMON-S */
-section { max-width: 1324px; padding: 158px 10px 160px; margin: 0 auto;}
 
+section { padding: 158px 20px 160px;}
+article { max-width: 1324px; margin: 0 auto;}
 /* VISUAL-S */
 .visual { overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center; 
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
   width: 100%; height: 360px;
   position: relative;
 }
 .visual .visual-box { 
   width: 100%; height: 100%;
-  background-size: cover;
-  position: absolute; left: 0; top: 0;
+  position: absolute; left: 0; top: 0; z-index: -10;
   animation: visual-s 5s 0s ease-in-out;
 }
+/* .visual .visual-box img { width: 100%; height: 100%; }  */
+.visual .visual-box_mobile img { display: none;}
 .visual .visual-box-txt { 
-  display: flex; flex-direction: column; justify-content: flex-start;
-  width: 100%; max-width: 1324px;
-  color: #fff;
+  display: flex; flex-direction: column; justify-content: center;
+  width: 100%; max-width: 1324px; 
+  color: #373737;
 }
 .visual .visual-box-txt .s-tit { font-weight: 800; font-size: 50px;}
 .visual .visual-box-txt .s-desc { font-size: 20px;}
@@ -67,17 +69,32 @@ section { max-width: 1324px; padding: 158px 10px 160px; margin: 0 auto;}
 /* LNB-E */
 
 /* ARTICLE-S */
+.box-tit { margin-bottom: 111px;}
 article h3 { opacity: 0;
   font-weight: 700; font-size: 60px; color: #333; line-height: 80px;
 }
-article .art-desc { display: block; 
-  margin: 47px 0 111px;
-  font-weight: 500; font-size: 21px;
+article .art-desc { display: block;
+  margin-top: 40px;
+  font-weight: 500; font-size: 21px; line-height: 30px;
 }
 /* ARTICLE-E */
 
 
-@media all and (max-width:800px) {
+.bg-menu-ani {
+  position: absolute; top: 78px; right: 130px;
+  animation: animal 20s infinite linear; 
+  transform-origin: 50% 50%;
+}
+@keyframes animal {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+@media all and (max-width: 800px) {
   article h3 { font-size: 40px; line-height: 60px;}
   article .art-desc { font-size: 17px;}
 }

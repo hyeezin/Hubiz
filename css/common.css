@@ -13,6 +13,7 @@
 }
 a {text-decoration: none; color: inherit;}
 img {display: block;}
+button { background: none; border: 0; cursor: pointer;}
 .hidden {
   width: 0; height: 0; overflow:hidden;
   font-size: 0; line-height: 0; text-indent: -9999px; 
@@ -132,12 +133,11 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
   height: 41px; margin-bottom: 11px; 
   text-indent: -9999px;
   background-repeat: no-repeat; background-position: center center;
-  border: 1px solid #f00;
 }
-.util .util-sns .util-sns-list li:nth-child(1) { background-image: url(/img/btn_util_youtube.png);}
-.util .util-sns .util-sns-list li:nth-child(2) { background-image: url(/img/btn_util_instagram.png);}
-.util .util-sns .util-sns-list li:nth-child(3) { background-image: url(/img/btn_util_facebook.png);}
-.util .util-sns .util-sns-list li:nth-child(4) { background-image: url(/img/btn_util_blog.png);}
+.util .util-sns .util-sns-list li:nth-child(1) { background-image: url(../img/btn_util_youtube.png);}
+.util .util-sns .util-sns-list li:nth-child(2) { background-image: url(../img/btn_util_instagram.png);}
+.util .util-sns .util-sns-list li:nth-child(3) { background-image: url(../img/btn_util_facebook.png);}
+.util .util-sns .util-sns-list li:nth-child(4) { background-image: url(../img/btn_util_blog.png);}
 .util .util-sns .util-sns-list li a { display: block;
   width: 41px; height: 41px; margin: 0 auto;
 }
@@ -178,10 +178,22 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
   border-radius: 25px 25px 0 0;
   border-bottom: 0;
 }
-
-.all-menu { display: none;}
+.all-menu-btn { display: none;}
+.all-menu { display: none;
+  visibility: hidden;
+}
 /* UTIL-E */
 /* HEADER-E */
+
+/* QUICK-BTN-S */
+.quick-btn {
+  width: 58px; height: 58px; 
+  border-radius: 28px;
+  position: fixed; right:60px; bottom: 89px; z-index: 100;
+  background: #7ab5c7 url(../img/btn_call.png) no-repeat center center;
+}
+.quick-btn span { opacity: 0;}
+/* QUICK-BTN-E */
 
 /* FOOTER-S */
 #footer {
@@ -251,7 +263,7 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
 .f-box .f-sns .f-sns-list li:nth-child(4) a { background-position: -123px -65px;}
 .f-box .f-sns .f-sns-list a { display: block; opacity: 0.5;
   width: 41px; height: 41px;
-  background-image: url(/img/icon.png); 
+  background-image: url(img/icon.png); 
 }
 
 #footer a:hover { color: #7ab5c7;}
@@ -303,11 +315,11 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
 @media all and (max-width: 800px) {
   /* HEADER-S */
   #header { height: 60px;}
-  .header-area { justify-content: space-between;}
+  .header-area { justify-content: space-between; height: 100%;}
   .logo { width: 150px; height: 25px;}
   .logo > a { 
     width: 100%; height: 25px;
-    background: url(/img/m_logo.png) no-repeat; background-size: contain;
+    background: url(../img/m_logo.png) no-repeat; background-size: contain;
   }
   .gnb { display: none;}
   .util { display: block;}
@@ -319,19 +331,11 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
   }
   .util .util-hire > a { 
     width: 100%; height: 18px;
-    background: #fff url(/img/ico_person_black.png) no-repeat; background-size: contain;
+    background: #fff url(../img/ico_person_black.png) no-repeat; background-size: contain;
   }
   .util .util-sns { display: none;}
   .util .util-lang { display: none;}
   
-  /* ALL-MENU */
-  .all-menu { display: block;
-    width: 100%; height: 100vh; 
-    position: absolute; right: 0; top: 0; 
-  }
-  .all-menu .all-menu-wrap { 
-    display: flex; justify-content: flex-end;
-  }
   .all-menu-btn { 
     display: flex;
     width: 25px; height: 18px;
@@ -352,14 +356,22 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
   .all-menu-btn.active span:nth-child(1) { top: 50%; transform: rotate(45deg) translateY(-50%);}
   .all-menu-btn.active span:nth-child(2) { opacity: 0;}
   .all-menu-btn.active span:nth-child(3) { bottom: 50%; transform: rotate(-45deg) translateY(50%);}
-
-  .all-menu .all-menu-wrap .all-menu-box { display: none;
-    width: 100%; height: 100vh;
+  /* ALL-MENU */
+  .all-menu { display: none;
+    width: 100%; height: 100vh; 
+    position: fixed; right: 0; top: 0; 
+    visibility: visible;
+  }
+  .all-menu .all-menu-wrap { 
+    display: flex; justify-content: flex-end;
     background-color: rgba(123, 182, 200, 0.95);
-    transition: all 0.3s;
   }
 
-
+  .all-menu .all-menu-wrap .all-menu-box { 
+    /* display: none; */
+    width: 100%; height: 100vh;
+    transition: all 0.3s;
+  }
   .bg-menu-ani {
     /* width: 80vh; height: 80vh; */
     position: absolute; left: 0; top: 0; 
@@ -367,25 +379,25 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
     transform-origin: 50% 50%;
   }
   .sidebar { 
-    display: flex; justify-content: space-between;
+    display: flex; justify-content: flex-end;
     width: 100%; height: 100%;
   }
   .sidebar .m-logo {
-    display: flex; 
     width: 150px; height: 25px; margin-top: 20px; padding-left: 32px;
+    position: absolute; left: 0; top: 0; z-index: 500;
   }
   .sidebar .m-logo a { display: block;
-    width: 100%; 
-    background: url(/img/m_logo_white.png) no-repeat; background-size: 101px 25px;
+    width: 100%; height: 100%;
+    background: url(../img/m_logo_white.png) no-repeat; background-size: 101px 25px;
   }
-  .sidebar .m-header-box { 
-    height: 100%;
-    background-color: #fff;
+  .sidebar .m-header-box {  
+    width: 100%; height: 60px;
     position: absolute; right: 0; top: 0;
   }  
   .util .util-hire { position: absolute; right: 32px; top: 24px;} 
-  .sidebar .m-header-box .m-lang { display: flex; justify-content: center;
-    position: absolute; left: 35px; top: 22px;
+  .sidebar .m-header-box .m-lang { 
+    display: flex; justify-content: flex-end;
+    transform: translate(-100px, 24px);
   }
   .sidebar .m-header-box .m-lang li { margin-right: 20px;}
   .sidebar .m-header-box .m-lang li a { line-height: 10px;}
@@ -396,11 +408,13 @@ body { font: 16px/1.5 'NexonLv2Gothic' , "돋움" , Dotum, AppleGothic, sans-ser
   }
   .sidebar .m-menu {
     width: 231px; height: 100%;
+    display: flex; flex-direction:column; justify-content: center;
+    background-color: #fff;
   }
   .sidebar .m-menu .m-menu-box {
-    display: flex; flex-direction:column; justify-content: center;
-    width: 100%; height: 780px;
-    background-color: #fff;
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 780px; 
+    /* background-color: #fff; */
   }
   .sidebar .m-menu .m-menu-box .m-menu-list { 
     display: flex; flex-direction: column;

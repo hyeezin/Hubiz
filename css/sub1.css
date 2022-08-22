@@ -1,20 +1,9 @@
 @charset "UTF-8";
-
-.visual .visual-box { background: url(../img/sub/sub_visual_about.jpg) no-repeat center center;}
+.visual .visual-box-txt { color: #fff;}
 
 
 .about { position: relative;}
-.about .bg-menu-ani {
 
-  position: absolute; top: 78px; right: 100px;
-  animation: animal 20s infinite linear; 
-  transform-origin: 50% 50%;
-}
-@keyframes animal {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .about .about-intro { margin-bottom: 194px;}
 .about-intro-box { display: flex; flex-wrap: wrap;}
@@ -137,4 +126,10 @@
 @media all and (max-width: 1050px) {
   .about-intro-list { width: calc(33.33333% - 40px);}
   .about-new-list { width: calc(33.33333% - 40px);}
+}
+@media all and (max-width: 800px) {
+  .about-intro-box { margin-left: -20px;}
+  .about-intro-list { width: calc(50% - 20px); margin: 0 0 20px 20px;}
+  .about-new-box { margin-left: -20px;}
+  .about-new-list { width: calc(50% - 20px); margin: 0 0 20px 20px;}
 }

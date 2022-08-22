@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.visual .visual-box-txt { color: #fff;}
+article h3 { opacity: 1;}
+article em { display: block;
+  width: 100%; height: 40px; 
+  text-align: right; line-height: 40px;
+}
+
+table tbody tr td.bold { font-weight: 700;}
+table tbody tr td.color { color: #78b5c7}
+table { 
+  width: 100%;
+  border-bottom: 1px solid #373737;
+}
+table thead tr th {
+  padding: 25px 0;
+  font-weight: 700; font-size: 20px;
+  border-top: 2px solid #373737;
+  background-color: #f5f5f5;
+}
+table tbody tr td {
+  padding: 25px 0;
+  font-weight: 700; font-size: 20px; text-align: center;
+  border-top: 1px solid #373737;
+}
+/* FINACIAL-BOX-S */
+.financial-box { margin-bottom: 144px;}
+
+/* FINACIAL-BOX-E */
+
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1170px) {
+  
+}
+@media all and (max-width: 890px) {
+  
+}
